@@ -102,8 +102,8 @@ $(document).ready(function(){
 			}		
 		});
 	
-	// 12번 댓글 삭제 테스트
-	replyService.remove(12, function(count){
+	// 댓글 삭제 테스트
+	replyService.remove(64, function(count){
 		console.log(count);
 		
 		if(count === "success"){
@@ -113,6 +113,18 @@ $(document).ready(function(){
 		alert('error...');
 	});
 	
+	replyService.update({
+		rno : 31,
+		bno : bnoValue,
+		reply : "Modified Reply..."		
+	}, function(result){
+		alert("수정완료...");
+	});
+	
+	replyService.get(15,function(data){
+		console.log(data)
+	});
+		
 	});
 </script>
 <%@include file = "../includes/footer.jsp" %>
