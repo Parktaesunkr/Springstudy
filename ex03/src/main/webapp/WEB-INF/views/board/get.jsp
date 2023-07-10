@@ -18,6 +18,7 @@
                         <div class="panel-heading">
                             Board Read Page
                         </div>
+                        	<i class = "fa fa-comments fa-fw"></i>Reply
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 								<div class="form-group">
@@ -40,7 +41,7 @@
                                 <button data-oper='modify' class="btn btn-default">
                                 Modify</button>
                                 <button data-oper='list' class="btn btn-info">
-                                List</button>
+                                List</button>                                                                                            
                                 
                                 <form id='operForm' action="/board/modify" method="get">
                                 	<input type="hidden" id='bno' name='bno' value='<c:out value="${board.bno}"/>'>                               
@@ -49,8 +50,21 @@
                                 	<input type="hidden" name="type" value='<c:out value="${cri.type}"/>' />
        								<input type="hidden" name="keyword" value='<c:out value="${cri.keyword}"/>' />
        							</form>
-							<!-- /.table-responsive -->
-                        </div>
+							<!-- /.table-responsive -->	
+							<ul class = "chat">
+							<!-- start reply -->
+								<li class = "left clearfix" data-rno='12'>
+									<div>
+										<div class = "header">
+											<strong class = "primary-font">user00</strong>
+											<small class="pull-right text-muted">2018-01-01 13:13</small>
+										</div>
+										<p>Good job!</p>
+									</div>
+								</li>
+							<!-- end reply -->
+							</ul>						
+                        </div>                       
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
@@ -81,6 +95,29 @@ $(document).ready(function(){
 	console.log("JS TEST");
 	
 	var bnoValue = '<c:out value="${board.bno}" />';
+	var replyUL = $(".chat");
+		
+		showList(1);
+		
+		function showList(page){
+			replyService.getList({bno:bnoValue,page: page|| 1}, function(list){
+				
+				var str = "";
+				if(list == null || list.length == 0){
+					replyUL.html("");
+					
+					return;
+				}
+				for(var i = 0, len = list.length || 0; i <len; i++){
+					str +="<li class='left clearfix' data-rno='"+list[i].rno+"'>";
+					str +=" <div><div class='header'><strong class = 'primary-font'>"+list[i].replyer+"<strong>";
+					str +=" <small class='pull-right text-muyed'>"+list[i].replyDate+"</small></div>"
+					str +=" <p>"+list[i].reply+"</p></div></li>";
+				}
+				
+				replyUL.html(str);
+			}); //end function
+		} // end showList
 	
 	// for repluService add test
 	replyService.add(
