@@ -18,7 +18,9 @@
                         <div class="panel-heading">
                             Board Read Page
                         </div>
-                        	<i class = "fa fa-comments fa-fw"></i>Reply
+                        	<!-- <i class = "fa fa-comments fa-fw"></i>Reply -->
+                        	<i class = "fa fa-comments fa-fw"></i> Reply
+                        		<button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>New Reply</button>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 								<div class="form-group">
@@ -111,7 +113,7 @@ $(document).ready(function(){
 				for(var i = 0, len = list.length || 0; i <len; i++){
 					str +="<li class='left clearfix' data-rno='"+list[i].rno+"'>";
 					str +=" <div><div class='header'><strong class = 'primary-font'>"+list[i].replyer+"<strong>";
-					str +=" <small class='pull-right text-muyed'>"+list[i].replyDate+"</small></div>"
+					str +=" <small class='pull-right text-muted'>"+reolyService.displayTime(list[i].replyDate)+"</small></div>"
 					str +=" <p>"+list[i].reply+"</p></div></li>";
 				}
 				
