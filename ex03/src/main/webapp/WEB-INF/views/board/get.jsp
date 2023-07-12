@@ -51,7 +51,16 @@
        								<input type="hidden" name="keyword" value='<c:out value="${cri.keyword}"/>' />
        							</form>
 							<!-- /.table-responsive -->	
-							<ul class = "chat">
+							
+                        </div>                       
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+            <ul class = "chat">
 							<!-- start reply -->
 								<li class = "left clearfix" data-rno='12'>
 									<div>
@@ -67,14 +76,6 @@
 								</li>
 							<!-- end reply -->
 							</ul>						
-                        </div>                       
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-            </div>
-            <!-- /.row -->
   <!-- Modal -->
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -164,11 +165,29 @@ $(document).ready(function(){
 		$("#addReplyBtn").on("click",function(e){
 			modal.find("input").val("");
 			modalInputReplyDate.closest("div").hide();
-			modal.find("button[id != 'modalCloseBtn']").hide();
+			modal.find("button[id !='modalCloseBtn']").hide();
 			modalRegisterBtn.show();
 			
 			$(".modal").modal("show");
 		});
+		
+		modalRegisterBtn.on("click",function(e){
+			var reply={
+				reply : modalInputReply.val(),
+				replyer : modalInputReplyer.val(),
+				bno : bnoValue
+		};
+		
+		replyService.add(reply, function(result){
+			alert(result);
+			
+			modal.find("input").val("");
+			modal.modal("hide");
+			
+			showList(1);
+		});
+		
+		
 	
 	// for repluService add test
 	replyService.add(
