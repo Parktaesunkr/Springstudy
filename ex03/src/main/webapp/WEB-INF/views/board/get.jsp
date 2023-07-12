@@ -18,9 +18,7 @@
                         <div class="panel-heading">
                             Board Read Page
                         </div>
-                        	<!-- <i class = "fa fa-comments fa-fw"></i>Reply -->
-                        	<i class = "fa fa-comments fa-fw"></i> Reply
-                        		<button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>New Reply</button>
+                        	
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 								<div class="form-group">
@@ -57,6 +55,9 @@
 							<!-- start reply -->
 								<li class = "left clearfix" data-rno='12'>
 									<div>
+									<!-- <i class = "fa fa-comments fa-fw"></i>Reply -->
+                        	<i class = "fa fa-comments fa-fw"></i> Reply
+                        		<button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>New Reply</button>
 										<div class = "header">
 											<strong class = "primary-font">user00</strong>
 											<small class="pull-right text-muted">2018-01-01 13:13</small>
@@ -74,7 +75,41 @@
                 <!-- /.col-lg-6 -->
             </div>
             <!-- /.row -->
-       
+  <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">REPLY MODAL</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                            	<label>Reply</label>
+                                            	<input class="form-control" name="reply" value="New Reply!!!!">
+                                            </div>
+                                            <div class="form-group">
+                                            	<label>Replyer</label>
+                                            	<input class="form-control" name="replyer" value="replyer">
+                                            </div>
+                                            <div class="form-group">
+                                            	<label>Reply Date</label>
+                                            	<input class="form-control" name="replyDate" value="">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id='modalModBtn' type="button" class="btn btn-warning">Modify</button>
+                                            <button id='modalRemoveBtn' type="button" class="btn btn-danger">Remove</button>
+                                            <button id='modalCloseBtn' type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button id='modalClassBtn' type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->      
 <script type="text/javascript" src="/resources/js/reply.js"></script>       
 <script type="text/javascript">
 $(document).ready(function(){
@@ -89,37 +124,34 @@ $(document).ready(function(){
 		operForm.submit();
 	});
 	
-	$(document).ready(function(){
-		console.log(replyService);
-	});
-	
-	console.log("=================");
-	console.log("JS TEST");
-	
 	var bnoValue = '<c:out value="${board.bno}" />';
 	var replyUL = $(".chat");
-		
+	
 		showList(1);
 		
 		function showList(page){
-			replyService.getList({bno:bnoValue,page: page|| 1}, function(list){
+			replyService.getList({bno:bnoValue,page: page||1},
+				function(list){
 				
 				var str = "";
 				if(list == null || list.length == 0){
 					replyUL.html("");
-					
 					return;
 				}
 				for(var i = 0, len = list.length || 0; i <len; i++){
-					str +="<li class='left clearfix' data-rno='"+list[i].rno+"'>";
-					str +=" <div><div class='header'><strong class = 'primary-font'>"+list[i].replyer+"<strong>";
-					str +=" <small class='pull-right text-muted'>"+reolyService.displayTime(list[i].replyDate)+"</small></div>"
-					str +=" <p>"+list[i].reply+"</p></div></li>";
+					str+="<li class='left clearfix' data-rno='"+list[i].rno+"'>";
+					str+=" <div><div class='header'><strong class = 'primary-font'>"+
+					list[i].replyer+"</strong>";
+					str +=" <small class='pull-right text-muted'>"+replyService.displayTime(list[i].replyDate)+
+					"</small></div>";
+					str+=" <p>"+list[i].reply+"</p></div></li>";
 				}
 				
 				replyUL.html(str);
-			}); //end function
+				
+			}); // end function
 		} // end showList
+		
 	
 	// for repluService add test
 	replyService.add(
@@ -129,10 +161,7 @@ $(document).ready(function(){
 		}
 	);	
 	
-	console.log("=================");
-	console.log("JS TEST");
 	
-	var bnoValue = '<c:out value="${board.bno}" />';
 	// reply List test
 	replyService.getList({bno:bnoValue, page:1},
 		function(list){
