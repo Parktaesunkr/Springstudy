@@ -1,8 +1,8 @@
 console.log("Reply Module...");
 
 var replyService = (function () {
-  function add(reply, callback) {
-    console.log("reply...");
+  function add(reply, callback, error) {
+    console.log("add reply...");
 
     $.ajax({
       type: "post",
@@ -54,7 +54,7 @@ var replyService = (function () {
   }
 
   function update(reply, callback, error) {
-    console.log("RNO: " + reply.rno);
+  
 
     $.ajax({
       type: "put",
@@ -75,7 +75,7 @@ var replyService = (function () {
   }
 
   function get(rno, callback, error) {
-    $.get("replies/" + rno + ".json", function (result) {
+    $.get("/replies/" + rno + ".json", function (result) {
       if (callback) {
         callback(result);
       }
@@ -92,7 +92,7 @@ var replyService = (function () {
     var dateObj = new Date(timeValue);
     var str = "";
 
-    if (gap < 1000 * 60 * 60 * 24) {
+    if (gap < (1000 * 60 * 60 * 24)) {
       var hh = dateObj.getHours();
       var mi = dateObj.getMinutes();
       var ss = dateObj.getSeconds();
@@ -109,7 +109,7 @@ var replyService = (function () {
       var mm = dateObj.getMonth() + 1;
       var dd = dateObj.getDate();
 
-      return [yy, (mm > 9 ? "" : "0") + mm, "/", (dd > 9 ? "" : "0") + dd].join(
+      return [yy, "/", (mm > 9 ? "" : "0") + mm, "/", (dd > 9 ? "" : "0") + dd].join(
         ""
       );
     }
