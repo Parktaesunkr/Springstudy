@@ -89,7 +89,12 @@
 							</ul>
 							<!-- ./ end ul -->							            
             			</div>
-            			<!-- /.panel .chat-panel 기존에 존재하는 부분-->
+            			<!-- /.panel .chat-panel 기존-->
+            			<div class="panel-body">
+            				<ul class="chat">
+            				</ul>
+            			</div>
+            			<!-- /.panel .chat-panel 추가-->
             			<div class="panel-footer">
 
             			</div>
@@ -185,13 +190,15 @@ $(document).ready(function(){
 				
 				replyUL.html(str);
 				
+				showReplyPage(replyCnt);
+				
 			}); // end function
 		} // end showList
 		
 		var pageNum =1;
 		var replyPageFooter = $(".panel-footer");
 		
-		function showReplyPage(rplyCnt){
+		function showReplyPage(replyCnt){
 			var endNum = Math.ceil(pageNum /10.0) * 10;
 			var startNum = endNum-9;
 			
@@ -209,7 +216,7 @@ $(document).ready(function(){
 			var str = "<ul class='pagination pull-right'>";
 			
 			if(prev){
-				str+="<li class='page=item'><a class='page-link' href='"+
+				str+="<li class='page-item'><a class='page-link' href='"+
 				(startNum-1)+"'>Previous</a></li>";	
 			}
 				
@@ -217,7 +224,7 @@ $(document).ready(function(){
 				var active = pageNum == i ? "active" : "";
 				
 				str += "<li class='page-item " +active+" '><a class='page-link' href='"
-				+ i +"</a></li>";
+				+ i +"'</a></li>";
 				
 				if(next){
 					str+= "<li class='page-item'><a class='page-link' href ='"
@@ -232,7 +239,7 @@ $(document).ready(function(){
 			}	
 				
 				
-				
+				 
 		}
 		
 		var modal =$(".modal");
@@ -267,7 +274,8 @@ $(document).ready(function(){
 			modal.find("input").val("");
 			modal.modal("hide");
 			
-			showList(1);
+ 			// showList(1); 
+			showList(-1);
 		});
 		
 		modalModBtn.on("click", function(e){
