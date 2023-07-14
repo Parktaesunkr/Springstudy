@@ -1,6 +1,7 @@
 package org.zerock.Mapper;
 
 import java.util.List;
+
 import java.util.stream.IntStream;
 
 import org.junit.Test;
@@ -35,6 +36,17 @@ public class ReplyMapperTests {
 		
 		replies.forEach(reply -> log.info(reply));
 	}
+	
+	@Test
+	public void testList2() {
+		Criteria cri = new Criteria(2, 10);
+		
+		// 327701L
+		List<ReplyVO> replies = mapper.getListWithPaging(cri, 327701L);
+		
+		replies.forEach(reply -> log.info(reply));
+	}
+	
 	
 	
 	@Test
