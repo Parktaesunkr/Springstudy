@@ -19,12 +19,12 @@ public class Criteria {
 	private String keyword;
 	
 	public Criteria() {
-		this(1,10); // 페이지 당 게시글 수
+		this(1,10); // 페이지 당 게시글 수( 1 페이지 당 게시글 10개)
 	}
 		
-	public Criteria(int pageNum, int amount) {
-		this.pageNum = pageNum;
-		this.amount = amount;
+	public Criteria(int pageNum, int amount) { // 생성자
+		this.pageNum = pageNum; 
+		this.amount = amount; 
 	}
 	
 	public String[] getTypeArr() {

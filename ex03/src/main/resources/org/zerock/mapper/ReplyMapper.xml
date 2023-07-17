@@ -6,6 +6,7 @@
 <mapper namespace="org.zerock.mapper.ReplyMapper">
 
 	<insert id="insert">
+	<!-- 삽입 -->
 	
 	insert into tbl_reply (rno, bno, reply, replyer)
 	values (seq_reply.nextval, #{bno}, #{reply}, #{replyer})

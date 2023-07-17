@@ -17,6 +17,7 @@ public class ReplyServiceImpl implements ReplyService{
 	
 	@Autowired
 	private ReplyMapper mapper;
+	// ReplyMapper bean에 등록
 
 	@Override
 	public int register(ReplyVO vo) {

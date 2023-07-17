@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 <?xml version="1.0" encoding="UTF-8"?>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> Stashed changes
 <!--
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
@@ -23,8 +27,14 @@
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+<<<<<<< Updated upstream
     
     <Manager pathname=""/>
     
      <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="50" maxWait="-1" name="jdbc/oracle" password="12345" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="hr"/>
+=======
+    <!--
+    <Manager pathname="" />
+    -->
+>>>>>>> Stashed changes
 </Context>

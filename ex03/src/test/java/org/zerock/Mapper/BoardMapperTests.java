@@ -21,48 +21,54 @@ public class BoardMapperTests {
 	
 	@Autowired
 	private BoardMapper mapper;
+	// BoardMapper를 bean에 주입
 
 	@Test
-	public void testGetList() {
+	public void testGetList() { // 목록 확인 테스트
 		mapper.getList().forEach(board -> log.info(board));
 	}
 
-	 @Test public void testInsert() {
+	 @Test public void testInsert() { // 게시글 추가 테스트
 	  
-	 BoardVO board = new BoardVO(); board.setTitle("새로 작성하는 글");
-	 board.setContent("새로 작성하는 내용"); board.setWriter("newbie");
+	 BoardVO board = new BoardVO();
+	 		 board.setTitle("새로 작성하는 글");
+	 		 board.setContent("새로 작성하는 내용"); 
+	 		 board.setWriter("newbie");
 	 
-	 mapper.insert(board);
+	 mapper.insert(board); // mapper에 board 추가
 	 
 	 log.info(board); }
 	 
-	 @Test public void testInsertSelectKey() {
+	 @Test public void testInsertSelectKey() { // 특정 키를 가지고 게시글 추가 테스트
 	 
-	 BoardVO board = new BoardVO(); board.setTitle("AAATest test");
-	 board.setContent("AAAContent 내용"); board.setWriter("tester");
+	 BoardVO board = new BoardVO(); 
+	 	board.setTitle("AAATest test");
+	 	board.setContent("AAAContent 내용"); 
+	 	board.setWriter("tester");
 	 
 	 mapper.insertSelectKey(board);
 	 
-	 log.info("---------------------------"); log.info("after insert select " +
+	 log.info("---------------------------");
+	 log.info("after insert select " +
 	 board.getBno()); }
 	
 	@Test
-	public void testRead() {
-		BoardVO board = mapper.read(29L);
+	public void testRead() { // 게시글 보기 테스트
+		BoardVO board = mapper.read(29L); // 29번째 게시글 읽기
 		
-		log.info(board);
+		log.info(board); // 게시글 콘솔에 출력
 	}
 	@Test
-	public void testDelete() {
+	public void testDelete() { // 게시글 삭제 테스트
 		
-		log.info("DELETE COUNT: "+ mapper.delete(25L));
+		log.info("DELETE COUNT: "+ mapper.delete(25L)); // 25번째 글 삭제
 	}
 	
 	@Test
-	public void testUpdate() {
+	public void testUpdate() { // 게시글 수정 테스트
 		
 		BoardVO board = new BoardVO();
-		board.setBno(27L);
+		board.setBno(27L); // 27번째 게시글 수정
 		board.setTitle("수정된 제목");
 		board.setContent("수정된 내용");
 	 // board.setWriter("user00"); - 게시글의 작성자는 수정되면 안됨
@@ -72,7 +78,7 @@ public class BoardMapperTests {
 	}
 	
 	@Test
-	public void testPaging() {
+	public void testPaging() { // 페이징 기능 테스트
 		Criteria cri = new Criteria();
 		
 		cri.setPageNum(3);
@@ -84,7 +90,7 @@ public class BoardMapperTests {
 	}
 	
 	@Test
-	public void testSearch() {
+	public void testSearch() { // 검색기능 테스트
 		
 		Criteria cri = new Criteria();
 		cri.setKeyword("새로");
