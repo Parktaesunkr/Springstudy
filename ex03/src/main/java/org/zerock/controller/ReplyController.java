@@ -57,7 +57,7 @@ public class ReplyController {
 		
 		log.info("get Reply List bno: "+bno);
 		
-		log.info(cri);
+		log.info("cri: " + cri);
 		return new ResponseEntity<>(service.getListPage(cri, bno),HttpStatus.OK);
 	}
 	
