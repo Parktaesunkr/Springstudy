@@ -30,7 +30,6 @@
 ![Badge](http://img.shields.io/badge/-VSCode-%23007ACC?style=flat-square&logo=VisualStudioCode&logoColor=white)
 ![Badge](http://img.shields.io/badge/-Spring-%236DB33F?style=flat-square&logo=Spring&logoColor=white)
 ![Badge](http://img.shields.io/badge/-ApacheTomcat-%23F8DC75?style=flat-square&logo=ApacheTomcat&logoColor=black)
-![Badge](http://img.shields.io/badge/-MySQL-%234479A1?style=flat-square&logo=MySQL&logoColor=white)
 ![Badge](http://img.shields.io/badge/-Github-%23181717?style=flat-square&logo=GitHub&logoColor=white)
 
 
