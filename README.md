@@ -15,9 +15,6 @@
 - Maven Project
 - Bootstrap
 
-# 피드백 사항
-- 부트스트랩 내용 수정 필요
-- 뒤로 가기 사용 후 문제 발생 해결 필요
 ### 사용언어
 
 ![Badge](http://img.shields.io/badge/-HTML5-%23E34F26?style=flat-square&logo=HTML5&logoColor=white)
@@ -36,3 +33,10 @@
 ![Badge](http://img.shields.io/badge/-ApacheTomcat-%23F8DC75?style=flat-square&logo=ApacheTomcat&logoColor=black)
 ![Badge](http://img.shields.io/badge/-MySQL-%234479A1?style=flat-square&logo=MySQL&logoColor=white)
 ![Badge](http://img.shields.io/badge/-Github-%23181717?style=flat-square&logo=GitHub&logoColor=white)
+
+
+
+# 피드백 사항
+- 부트스트랩 내용 수정 필요
+- 뒤로 가기 사용 후 문제 발생 해결 필요
+- 주석 작업 더 필요
