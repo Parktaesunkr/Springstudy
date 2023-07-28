@@ -33,6 +33,14 @@
 ![Badge](http://img.shields.io/badge/-Github-%23181717?style=flat-square&logo=GitHub&logoColor=white)
 
 
+## 작동 화면
+### 페이지 화면
+![페이지](https://github.com/Parktaesunkr/Springstudy/assets/129746792/c9655b09-52f5-4f24-b6ed-f854f8c37d5f)
+
+### 게시글 및 댓글
+![내용 및 댓글](https://github.com/Parktaesunkr/Springstudy/assets/129746792/460af36c-fb92-4142-9d30-6a65b2a19e8b)
+
+
 
 # 피드백 사항
 - 부트스트랩 내용 수정 필요
