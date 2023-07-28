@@ -14,3 +14,7 @@
 - Ajax
 - Maven Project
 - Bootstrap
+
+# 피드백 사항
+- 부트스트랩 내용 수정 필요
+- 뒤로 가기 사용 후 문제 발생 해결 필요
