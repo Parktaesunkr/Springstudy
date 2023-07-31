@@ -13,7 +13,6 @@ Spring을 이용한 CRUD와 RESTful 학습
 - Lombok
 - Spring Web
 - Java, HTML, CSS, JS
-- Ajax
 - Maven Project
 - Bootstrap
 
@@ -22,7 +21,6 @@ Spring을 이용한 CRUD와 RESTful 학습
 ![Badge](http://img.shields.io/badge/-HTML5-%23E34F26?style=flat-square&logo=HTML5&logoColor=white)
 ![Badge](http://img.shields.io/badge/CSS3-blue?style=flat-square&logo=CSS3&logoColor=white)
 ![Badge](http://img.shields.io/badge/JavaScript-yellow?style=flat-square&logo=JavaScript&logoColor=white)
-![Badge](http://img.shields.io/badge/jQuery-%230769AD?style=flat-square&logo=jQuery&logoColor=white)
 ![Badge](http://img.shields.io/badge/-Java-%23007396?style=flat-square&logo=Java&logoColor=white)
 
 ### 개발환경
