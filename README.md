@@ -2,6 +2,7 @@
 
 # 프로젝트 목적
 부트스트랩을 이용한 게시판 구현 및 댓글 기능 구현
+Spring을 이용한 CRUD와 RESTful 학습
 
 # 구현 기술 스택 
 - Spring 
@@ -36,6 +37,15 @@
 ## 작동 화면
 ### 페이지 화면
 ![페이지](https://github.com/Parktaesunkr/Springstudy/assets/129746792/c9655b09-52f5-4f24-b6ed-f854f8c37d5f)
+### 게시글 생성
+![생성](https://github.com/Parktaesunkr/Springstudy/assets/129746792/c551ce49-af49-4336-8909-842cfa583926)
+### 댓글 목록
+![댓글목록](https://github.com/Parktaesunkr/Springstudy/assets/129746792/9dd5158d-21e4-4cd9-999d-1b3b2f9df974)
+### 게시글 수정
+![수정](https://github.com/Parktaesunkr/Springstudy/assets/129746792/c12ac5b4-6e08-4879-853c-0761f890a658)
+### 수정 알림
+![모달](https://github.com/Parktaesunkr/Springstudy/assets/129746792/643247ad-2844-4b63-a785-e40856dc253d)
+
 
 ### 게시글 및 댓글
 ![내용 및 댓글](https://github.com/Parktaesunkr/Springstudy/assets/129746792/460af36c-fb92-4142-9d30-6a65b2a19e8b)
